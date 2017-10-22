@@ -1,0 +1,20 @@
+{
+  "name": "csvmailer",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index"
+  },
+  "repository": "git@github.com:adal-io/csvmailer.git",
+  "author": "adal.io <hello@adal.io>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "csv-parse": "^2.0.0",
+    "dotenv": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "nodemailer": "^4.2.0",
+    "path": "^0.12.7",
+    "validator": "^9.0.0"
+  }
+}
