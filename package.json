@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index"
+    "start": "node src/index",
+    "test": "node test"
   },
   "repository": "git@github.com:adal-io/csvmailer.git",
   "author": "adal.io <hello@adal.io>",
@@ -16,5 +17,8 @@
     "nodemailer": "^4.2.0",
     "path": "^0.12.7",
     "validator": "^9.0.0"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1"
   }
 }
