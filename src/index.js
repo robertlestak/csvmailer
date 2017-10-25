@@ -28,6 +28,7 @@ async function main () {
         mail.emails = emailArray
         let response = await mail.sendList()
         console.log(response)
+        process.exit()
       } catch (e) {
         console.log(e)
       }
