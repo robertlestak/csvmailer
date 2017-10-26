@@ -26,6 +26,10 @@ class Mail {
         return reject('Valid Email Required')
       }
       console.log('Send email', this.email.to)
+      if (mailconfig.service) {
+        delete mailconfig.host
+        delete mailconfig.port
+      }
         const transporter = nodemailer.createTransport(mailconfig)
         transporter.sendMail(this.email, async (error, info) => {
           if (error) {
