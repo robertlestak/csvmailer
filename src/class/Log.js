@@ -26,13 +26,13 @@ class Log {
       if (!this.file) return reject('File Required')
       if (!this.email) return reject('Email Required')
       try {
-        console.log('Check if email exists', this.email, 'Campaign:', this.file)
+        console.log('Check if email exists', this.email)
         const list = await this.list()
         if (list.indexOf(this.email) === -1) {
-          console.log('Email does not exist', this.email, 'Campaign:', this.file)
+          console.log('Email does not exist', this.email)
           return resolve(false)
         } else {
-          console.log('Email exists', this.email, 'Campaign:', this.file)
+          console.log('Email exists', this.email)
           return resolve(true)
         }
       } catch (e) {
@@ -48,7 +48,7 @@ class Log {
     return new Promise((resolve, reject) => {
       if (!this.file) return reject('File Required')
       if (!this.email) return reject('Email Required')
-      console.log('Append email to log -', 'Email:', this.email, 'Campaign:', this.file)
+      console.log('Append email to log -', 'Email:', this.email)
       let logItem = `${Date.now()}    ${this.email}    ${this.status}\n`
       fs.appendFile(path.join(dataPath, this.file + '.log'), logItem, (err) => {
         if (err) return reject(err)
