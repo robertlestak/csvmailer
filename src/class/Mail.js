@@ -20,6 +20,11 @@ class Mail {
       return new Promise(resolve => setTimeout(resolve, ms));
   }
 
+  dynamicEmailBody () {
+    this.email.html = this.email.html.replace(/{{USER_EMAIL}}/g, this.email.to)
+    return this.email.html
+  }
+
   sendEmail () {
     return new Promise((resolve, reject) => {
       if (!validator.isEmail(this.email.to)) {
@@ -30,6 +35,7 @@ class Mail {
         delete mailconfig.host
         delete mailconfig.port
       }
+        this.email.html = this.dynamicEmailBody()
         const transporter = nodemailer.createTransport(mailconfig)
         transporter.sendMail(this.email, async (error, info) => {
           if (error) {
