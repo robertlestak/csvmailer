@@ -14,7 +14,7 @@
     "csv-parse": "^4.4.6",
     "dotenv": "^4.0.0",
     "fs": "^0.0.1-security",
-    "nodemailer": "^4.2.0",
+    "nodemailer": "^6.4.16",
     "path": "^0.12.7",
     "validator": "^9.0.0"
   },
